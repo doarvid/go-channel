@@ -16,7 +16,7 @@
 ### 安装
 
 ```bash
-go get github.com/chenhg5/cc-connect/platform-sdk
+go get github.com/doarvid/go-channel
 ```
 
 ### 简单示例
@@ -28,7 +28,7 @@ import (
     "context"
     "log"
 
-    sdk "github.com/chenhg5/cc-connect/platform-sdk"
+    sdk "github.com/doarvid/go-channel"
 )
 
 func main() {

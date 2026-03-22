@@ -1,4 +1,4 @@
-module github.com/chenhg5/cc-connect/platform-sdk
+module github.com/doarvid/go-channel
 
 go 1.25.0
 

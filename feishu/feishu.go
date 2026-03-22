@@ -15,7 +15,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/chenhg5/cc-connect/platform-sdk/core"
+	"github.com/doarvid/go-channel/core"
 
 	lark "github.com/larksuite/oapi-sdk-go/v3"
 	larkcore "github.com/larksuite/oapi-sdk-go/v3/core"
@@ -116,11 +116,11 @@ type Platform struct {
 	userNameCache         sync.Map // open_id -> display name
 	chatNameCache         sync.Map // chat_id -> chat name
 	// Webhook mode fields (for Lark international version)
-	server         *http.Server
-	port           string
-	callbackPath   string
-	encryptKey     string
-	eventHandler   *dispatcher.EventDispatcher
+	server       *http.Server
+	port         string
+	callbackPath string
+	encryptKey   string
+	eventHandler *dispatcher.EventDispatcher
 }
 
 type interactivePlatform struct {
@@ -143,19 +143,19 @@ func NewLark(opts map[string]any) (core.Platform, error) {
 
 // Options for creating a Feishu/Lark platform.
 type Options struct {
-	AppID              string // required: Feishu/Lark App ID
-	AppSecret          string // required: Feishu/Lark App Secret
-	ReactionEmoji      string // optional: emoji for reaction indicator, default "OnIt"
-	AllowFrom          string // optional: comma-separated allowed user IDs, default "*"
-	GroupReplyAll      bool   // optional: reply to all group messages, default false
-	ShareSessionInChannel bool // optional: share session across channel, default false
-	ReplyInThread      bool   // optional: reply in thread, default false
-	ThreadIsolation    bool   // optional: isolate sessions by thread, default false
-	EnableFeishuCard   *bool  // optional: enable interactive cards, default true
+	AppID                 string // required: Feishu/Lark App ID
+	AppSecret             string // required: Feishu/Lark App Secret
+	ReactionEmoji         string // optional: emoji for reaction indicator, default "OnIt"
+	AllowFrom             string // optional: comma-separated allowed user IDs, default "*"
+	GroupReplyAll         bool   // optional: reply to all group messages, default false
+	ShareSessionInChannel bool   // optional: share session across channel, default false
+	ReplyInThread         bool   // optional: reply in thread, default false
+	ThreadIsolation       bool   // optional: isolate sessions by thread, default false
+	EnableFeishuCard      *bool  // optional: enable interactive cards, default true
 	// Webhook mode (for Lark international version)
-	Port               string // optional: webhook server port, default "8080"
-	CallbackPath       string // optional: webhook callback path, default "/feishu/webhook"
-	EncryptKey         string // optional: webhook encrypt key
+	Port         string // optional: webhook server port, default "8080"
+	CallbackPath string // optional: webhook callback path, default "/feishu/webhook"
+	EncryptKey   string // optional: webhook encrypt key
 }
 
 // NewWithOptions creates a new Feishu platform with structured options.

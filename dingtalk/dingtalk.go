@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log/slog"
 
-	"github.com/chenhg5/cc-connect/platform-sdk/core"
+	"github.com/doarvid/go-channel/core"
 )
 
 func init() {
@@ -18,12 +18,12 @@ type replyContext struct {
 }
 
 type Platform struct {
-	appKey              string
-	appSecret           string
-	allowFrom           string
-	robotCode           string
-	handler             core.MessageHandler
-	cancel              context.CancelFunc
+	appKey    string
+	appSecret string
+	allowFrom string
+	robotCode string
+	handler   core.MessageHandler
+	cancel    context.CancelFunc
 }
 
 func New(opts map[string]any) (core.Platform, error) {
@@ -36,10 +36,10 @@ func New(opts map[string]any) (core.Platform, error) {
 		return nil, fmt.Errorf("dingtalk: app_key and app_secret are required")
 	}
 	return &Platform{
-		appKey:     appKey,
-		appSecret:  appSecret,
-		allowFrom:  allowFrom,
-		robotCode:  robotCode,
+		appKey:    appKey,
+		appSecret: appSecret,
+		allowFrom: allowFrom,
+		robotCode: robotCode,
 	}, nil
 }
 

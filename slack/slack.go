@@ -9,7 +9,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/chenhg5/cc-connect/platform-sdk/core"
+	"github.com/doarvid/go-channel/core"
 
 	"github.com/slack-go/slack"
 	"github.com/slack-go/slack/slackevents"

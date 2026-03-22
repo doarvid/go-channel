@@ -9,8 +9,8 @@
 //	    "context"
 //	    "log"
 //
-//	    sdk "github.com/chenhg5/cc-connect/platform-sdk"
-//	    "github.com/chenhg5/cc-connect/platform-sdk/core"
+//	    sdk "github.com/doarvid/go-channel"
+//	    "github.com/doarvid/go-channel/core"
 //	)
 //
 //	func main() {
@@ -44,13 +44,13 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/chenhg5/cc-connect/platform-sdk/core"
-	"github.com/chenhg5/cc-connect/platform-sdk/dingtalk"
-	"github.com/chenhg5/cc-connect/platform-sdk/discord"
-	"github.com/chenhg5/cc-connect/platform-sdk/feishu"
-	"github.com/chenhg5/cc-connect/platform-sdk/slack"
-	"github.com/chenhg5/cc-connect/platform-sdk/telegram"
-	"github.com/chenhg5/cc-connect/platform-sdk/wecom"
+	"github.com/doarvid/go-channel/core"
+	"github.com/doarvid/go-channel/dingtalk"
+	"github.com/doarvid/go-channel/discord"
+	"github.com/doarvid/go-channel/feishu"
+	"github.com/doarvid/go-channel/slack"
+	"github.com/doarvid/go-channel/telegram"
+	"github.com/doarvid/go-channel/wecom"
 )
 
 // Message wraps a core.Message with convenient methods for replying.
@@ -112,14 +112,14 @@ type FeishuConfig struct {
 	ReactionEmoji         string // optional: emoji for reaction indicator, default "OnIt"
 	AllowFrom             string // optional: comma-separated allowed user IDs, default "*"
 	GroupReplyAll         bool   // optional: reply to all group messages, default false
-	ShareSessionInChannel bool // optional: share session across channel, default false
+	ShareSessionInChannel bool   // optional: share session across channel, default false
 	ReplyInThread         bool   // optional: reply in thread, default false
 	ThreadIsolation       bool   // optional: isolate sessions by thread, default false
 	// Webhook mode (for Lark international version)
-	UseWebhook     bool   // optional: use webhook mode instead of WebSocket
-	Port           string // optional: webhook server port, default "8080"
-	CallbackPath   string // optional: webhook callback path, default "/feishu/webhook"
-	EncryptKey     string // optional: webhook encrypt key
+	UseWebhook   bool   // optional: use webhook mode instead of WebSocket
+	Port         string // optional: webhook server port, default "8080"
+	CallbackPath string // optional: webhook callback path, default "/feishu/webhook"
+	EncryptKey   string // optional: webhook encrypt key
 }
 
 // NewFeishuBot creates a new Feishu/Lark bot.

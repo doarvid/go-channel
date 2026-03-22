@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log/slog"
 
-	"github.com/chenhg5/cc-connect/platform-sdk/core"
+	"github.com/doarvid/go-channel/core"
 )
 
 func init() {
@@ -19,12 +19,12 @@ type replyContext struct {
 }
 
 type Platform struct {
-	corpID              string
-	agentID             int
-	secret              string
-	allowFrom           string
-	handler             core.MessageHandler
-	cancel              context.CancelFunc
+	corpID    string
+	agentID   int
+	secret    string
+	allowFrom string
+	handler   core.MessageHandler
+	cancel    context.CancelFunc
 }
 
 func New(opts map[string]any) (core.Platform, error) {

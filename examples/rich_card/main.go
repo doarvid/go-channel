@@ -9,7 +9,7 @@ import (
 	"os/signal"
 	"syscall"
 
-	sdk "github.com/chenhg5/cc-connect/platform-sdk"
+	sdk "github.com/doarvid/go-channel"
 )
 
 func main() {
